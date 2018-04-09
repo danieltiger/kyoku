@@ -1,9 +1,9 @@
-# kyoku: 
-   noun
-   tune  チューン, 曲, 楽曲, 調子, 曲調, 節
-   piece of music 曲
+### kyoku: A simple iTunes CLI, using ScriptingBridge.
 
-A simple iTunes CLI, using ScriptingBridge.
+     kyoku: noun  
+     tune  チューン, 曲, 楽曲, 調子, 曲調, 節  
+     piece of music 曲
+
 
 ```
 usage: kyoku command [<query>]
