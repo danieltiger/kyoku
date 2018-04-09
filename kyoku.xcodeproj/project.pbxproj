@@ -1,0 +1,292 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		243CB9C2207AE5D700227B13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CB9C1207AE5D700227B13 /* main.m */; };
+		243CB9CB207AE64600227B13 /* Kyoku.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CB9CA207AE64600227B13 /* Kyoku.m */; };
+		243CB9D1207AF7AA00227B13 /* TrackList.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CB9D0207AF7AA00227B13 /* TrackList.m */; };
+		243CB9D4207B02FC00227B13 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CB9D3207B02FC00227B13 /* Playlist.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		243CB9BC207AE5D700227B13 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		243CB9BE207AE5D700227B13 /* kyoku */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = kyoku; sourceTree = BUILT_PRODUCTS_DIR; };
+		243CB9C1207AE5D700227B13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		243CB9C8207AE5F100227B13 /* iTunes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		243CB9C9207AE64600227B13 /* Kyoku.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kyoku.h; sourceTree = "<group>"; };
+		243CB9CA207AE64600227B13 /* Kyoku.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kyoku.m; sourceTree = "<group>"; };
+		243CB9CF207AF7AA00227B13 /* TrackList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackList.h; sourceTree = "<group>"; };
+		243CB9D0207AF7AA00227B13 /* TrackList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackList.m; sourceTree = "<group>"; };
+		243CB9D2207B02FC00227B13 /* Playlist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
+		243CB9D3207B02FC00227B13 /* Playlist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		243CB9BB207AE5D700227B13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		243CB9B5207AE5D700227B13 = {
+			isa = PBXGroup;
+			children = (
+				243CB9C0207AE5D700227B13 /* kyoku */,
+				243CB9BF207AE5D700227B13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		243CB9BF207AE5D700227B13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				243CB9BE207AE5D700227B13 /* kyoku */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		243CB9C0207AE5D700227B13 /* kyoku */ = {
+			isa = PBXGroup;
+			children = (
+				243CB9C1207AE5D700227B13 /* main.m */,
+				243CB9C8207AE5F100227B13 /* iTunes.h */,
+				243CB9CF207AF7AA00227B13 /* TrackList.h */,
+				243CB9D0207AF7AA00227B13 /* TrackList.m */,
+				243CB9D2207B02FC00227B13 /* Playlist.h */,
+				243CB9D3207B02FC00227B13 /* Playlist.m */,
+				243CB9C9207AE64600227B13 /* Kyoku.h */,
+				243CB9CA207AE64600227B13 /* Kyoku.m */,
+			);
+			path = kyoku;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		243CB9BD207AE5D700227B13 /* kyoku */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 243CB9C5207AE5D700227B13 /* Build configuration list for PBXNativeTarget "kyoku" */;
+			buildPhases = (
+				243CB9BA207AE5D700227B13 /* Sources */,
+				243CB9BB207AE5D700227B13 /* Frameworks */,
+				243CB9BC207AE5D700227B13 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kyoku;
+			productName = kyoku;
+			productReference = 243CB9BE207AE5D700227B13 /* kyoku */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		243CB9B6207AE5D700227B13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = danieltiger;
+				TargetAttributes = {
+					243CB9BD207AE5D700227B13 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 243CB9B9207AE5D700227B13 /* Build configuration list for PBXProject "kyoku" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 243CB9B5207AE5D700227B13;
+			productRefGroup = 243CB9BF207AE5D700227B13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				243CB9BD207AE5D700227B13 /* kyoku */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		243CB9BA207AE5D700227B13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				243CB9C2207AE5D700227B13 /* main.m in Sources */,
+				243CB9D1207AF7AA00227B13 /* TrackList.m in Sources */,
+				243CB9CB207AE64600227B13 /* Kyoku.m in Sources */,
+				243CB9D4207B02FC00227B13 /* Playlist.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		243CB9C3207AE5D700227B13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		243CB9C4207AE5D700227B13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		243CB9C6207AE5D700227B13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		243CB9C7207AE5D700227B13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		243CB9B9207AE5D700227B13 /* Build configuration list for PBXProject "kyoku" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				243CB9C3207AE5D700227B13 /* Debug */,
+				243CB9C4207AE5D700227B13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		243CB9C5207AE5D700227B13 /* Build configuration list for PBXNativeTarget "kyoku" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				243CB9C6207AE5D700227B13 /* Debug */,
+				243CB9C7207AE5D700227B13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 243CB9B6207AE5D700227B13 /* Project object */;
+}
