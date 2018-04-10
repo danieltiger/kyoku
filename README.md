@@ -1,4 +1,4 @@
-### kyoku: A simple iTunes CLI, using ScriptingBridge
+### kyoku: An iTunes CLI
 
 曲: noun: music, melody, composition, pleasure, injustice, fault, curve, crooked, perverse, lean, bend
 
