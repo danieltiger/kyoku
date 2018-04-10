@@ -3,7 +3,7 @@
 曲: noun: music, tune, melody, composition
 
 ```
-usage: kyoku command [<query>]
+usage: kyoku [command] [<query>]
 
 The following commands are supported:
    list          List all songs, artists, or albums that match the query string
