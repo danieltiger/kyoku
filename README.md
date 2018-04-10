@@ -1,6 +1,6 @@
 ### kyoku: An iTunes CLI
 
-曲: noun: music, melody, composition, pleasure, injustice, fault, curve, crooked, perverse, lean, bend
+曲: noun: music, tune, melody, composition
 
 ```
 usage: kyoku command [<query>]
