@@ -7,21 +7,25 @@
 //
 
 #import "Kyoku.h"
-#import "TrackList.h"
-#import "Playlist.h"
+#import "App.h"
+#import "Store.h"
+#import "Library.h"
+
+NSString *AppPlaylistName = @"Kyoku";
 
 @interface Kyoku()
-@property (nonatomic) iTunesApplication *app;
-@property (nonatomic) iTunesSource *library;
-@property (nonatomic) iTunesPlaylist *libraryPlaylist;
+@property (nonatomic) App *app;
+@property (nonatomic) Library *library;
 @end
 
 @implementation Kyoku
 
 - (void)run {
-    self.app = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
-    self.library = [[self.app sources] objectAtIndex:0];
-    self.libraryPlaylist = [[self.library playlists] objectAtIndex:0];
+    self.app = [App new];
+
+    if ([Store storeExists]) {
+        self.library = [Store readLibraryFromStore];
+    }
 
     NSArray *arguments = [[NSProcessInfo processInfo] arguments];
     if (arguments.count < 2) {
@@ -48,11 +52,11 @@
     } else if ([verb isEqualToString:@"album"]) {
         [self playForModifier:@"album" noun:noun];
     } else if ([verb hasPrefix:@"prev"]) {
-        [self.app previousTrack];
+        [self.app playPreviousTrack];
     } else if ([verb hasPrefix:@"next"]) {
-        [self.app nextTrack];
+        [self.app playNextTrack];
     } else if ([verb hasPrefix:@"play"]) {
-        [self.app playpause];
+        [self.app play];
     } else if ([verb hasPrefix:@"pause"]) {
         [self.app pause];
     } else if ([verb isEqualToString:@"list-queue"]) {
@@ -66,6 +70,8 @@
         } else if ([modifier isEqualToString:@"album"]) {
             [self queueForModifier:modifier noun:noun];
         }
+    } else if ([verb isEqualToString:@"scan"]) {
+        [self scan];
     } else {
         [self printUsage];
         [self listInfo];
@@ -94,35 +100,35 @@
 }
 
 - (void)listForNoun:(NSString *)noun {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains %@ OR artist contains %@ OR album contains %@", noun, noun, noun];
-    TrackList *trackList = [[TrackList alloc] initWithTracks:[self.libraryPlaylist tracks] predicate:predicate];
-    [self printToConsole:[trackList consoleOutput]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains[cd] %@ OR artist contains[cd] %@ OR album contains[cd] %@", noun, noun, noun];
+    Library *filteredLibrary = [self.library filteredListWithPredicate:predicate];
+    [self printToConsole:[filteredLibrary consoleOutput]];
 }
 
 - (void)playForModifier:(NSString *)modifier noun:(NSString *)noun {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K contains %@", modifier, noun];
-    TrackList *trackList = [[TrackList alloc] initWithTracks:[self.libraryPlaylist tracks] predicate:predicate];
-    Playlist *playlist = [[Playlist alloc] initWithApplication:self.app];
-    [playlist regenerate];
-    [playlist queueTracks:[trackList filteredTracks]];
-    [playlist play];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", modifier, noun];
+    [self.app createPlaylist:AppPlaylistName];
+    [self.app queueTracksForPredicate:predicate onPlaylist:AppPlaylistName];
+    [self.app startPlaylist:AppPlaylistName];
 }
 
 - (void)listQueue {
-    Playlist *playlist = [[Playlist alloc] initWithApplication:self.app];
-    [self printToConsole:[playlist consoleQueueOutput]];
+    [self printToConsole:[self.app infoForPlaylistQueue:AppPlaylistName]];
 }
 
 - (void)listInfo {
-    Playlist *playlist = [[Playlist alloc] initWithApplication:self.app];
-    [self printToConsole:[playlist consoleInfoOutput]];
+    [self printToConsole:[self.app infoForPlaylist:AppPlaylistName]];
 }
 
 - (void)queueForModifier:(NSString *)modifier noun:(NSString *)noun {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K contains %@", modifier, noun];
-    TrackList *trackList = [[TrackList alloc] initWithTracks:[self.libraryPlaylist tracks] predicate:predicate];
-    Playlist *playlist = [[Playlist alloc] initWithApplication:self.app];
-    [playlist queueTracks:[trackList filteredTracks]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", modifier, noun];
+    [self.app queueTracksForPredicate:predicate onPlaylist:AppPlaylistName];
+}
+
+- (void)scan {
+    NSArray *tracks = [self.app scan];
+    Library *library = [[Library alloc] initWithTracks:tracks];
+    [Store writeLibraryToStore:library];
 }
 
 @end

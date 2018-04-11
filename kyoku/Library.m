@@ -1,29 +1,44 @@
 //
-//  QueryList.m
+//  Library.m
 //  kyoku
 //
-//  Created by Arik Devens on 4/8/18.
+//  Created by Arik Devens on 4/10/18.
 //  Copyright © 2018 danieltiger. All rights reserved.
 //
 
-#import "TrackList.h"
-#import "iTunes.h"
+#import "Library.h"
+#import "Track.h"
 
-@interface TrackList()
-@property (nonatomic, readwrite) NSArray *filteredTracks;
+@interface Library()
+@property (nonatomic) NSArray *tracks;
 @end
 
-@implementation TrackList
+@implementation Library
 
-#pragma mark - Create/Destroy
-
-- (instancetype)initWithTracks:(NSArray *)tracks predicate:(NSPredicate *)predicate {
+- (instancetype)initWithTracks:(NSArray *)tracks {
     self = [super init];
     if (!self) return nil;
 
-    self.filteredTracks = [tracks filteredArrayUsingPredicate:predicate];
+    _tracks = tracks;
 
     return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)decoder {
+    self = [super init];
+    if (!self) return nil;
+
+    self.tracks = [decoder decodeObjectForKey:@"tracks"];
+
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:self.tracks forKey:@"tracks"];
+}
+
+- (instancetype)filteredListWithPredicate:(NSPredicate *)predicate {
+    return [self initWithTracks:[self.tracks filteredArrayUsingPredicate:predicate]];
 }
 
 
@@ -33,7 +48,7 @@
     NSInteger songLength = 0;
     NSInteger artistLength = 0;
     NSInteger albumLength = 0;
-    for (iTunesTrack *track in self.filteredTracks) {
+    for (Track *track in self.tracks) {
         if (track.name.length > songLength) {
             songLength = track.name.length;
         }
@@ -51,7 +66,7 @@
     [output addObject:[self headerStringWithSongLength:songLength artistLength:artistLength albumLength:albumLength]];
     [output addObject:[self dividerStringWithSongLength:songLength artistLength:artistLength albumLength:albumLength]];
 
-    for (iTunesTrack *track in self.filteredTracks) {
+    for (Track *track in self.tracks) {
         [output addObject:[self entryStringWithTrack:track songLength:songLength artistLength:artistLength albumLength:albumLength]];
     }
 
@@ -89,7 +104,7 @@
     return [divider componentsJoinedByString:@""];
 }
 
-- (NSString *)entryStringWithTrack:(iTunesTrack *)track songLength:(NSInteger)songLength artistLength:(NSInteger)artistLength albumLength:(NSInteger)albumLength {
+- (NSString *)entryStringWithTrack:(Track *)track songLength:(NSInteger)songLength artistLength:(NSInteger)artistLength albumLength:(NSInteger)albumLength {
     NSMutableArray *entry = [NSMutableArray array];
 
     [entry addObject:@"| "];

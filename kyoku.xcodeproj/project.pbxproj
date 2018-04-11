@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		243CB9C2207AE5D700227B13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CB9C1207AE5D700227B13 /* main.m */; };
 		243CB9CB207AE64600227B13 /* Kyoku.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CB9CA207AE64600227B13 /* Kyoku.m */; };
-		243CB9D1207AF7AA00227B13 /* TrackList.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CB9D0207AF7AA00227B13 /* TrackList.m */; };
-		243CB9D4207B02FC00227B13 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CB9D3207B02FC00227B13 /* Playlist.m */; };
+		2448CF7D207D92D700180817 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 2448CF7C207D92D700180817 /* App.m */; };
+		2448CF80207D94D000180817 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 2448CF7F207D94D000180817 /* Track.m */; };
+		2448CF83207D983400180817 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 2448CF82207D983400180817 /* Store.m */; };
+		2448CF86207D9DD300180817 /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 2448CF85207D9DD300180817 /* Library.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,10 +33,14 @@
 		243CB9C8207AE5F100227B13 /* iTunes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 		243CB9C9207AE64600227B13 /* Kyoku.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kyoku.h; sourceTree = "<group>"; };
 		243CB9CA207AE64600227B13 /* Kyoku.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kyoku.m; sourceTree = "<group>"; };
-		243CB9CF207AF7AA00227B13 /* TrackList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackList.h; sourceTree = "<group>"; };
-		243CB9D0207AF7AA00227B13 /* TrackList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackList.m; sourceTree = "<group>"; };
-		243CB9D2207B02FC00227B13 /* Playlist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
-		243CB9D3207B02FC00227B13 /* Playlist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
+		2448CF7B207D92D700180817 /* App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		2448CF7C207D92D700180817 /* App.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
+		2448CF7E207D94D000180817 /* Track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		2448CF7F207D94D000180817 /* Track.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
+		2448CF81207D983400180817 /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		2448CF82207D983400180817 /* Store.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		2448CF84207D9DD300180817 /* Library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
+		2448CF85207D9DD300180817 /* Library.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +75,14 @@
 			children = (
 				243CB9C1207AE5D700227B13 /* main.m */,
 				243CB9C8207AE5F100227B13 /* iTunes.h */,
-				243CB9CF207AF7AA00227B13 /* TrackList.h */,
-				243CB9D0207AF7AA00227B13 /* TrackList.m */,
-				243CB9D2207B02FC00227B13 /* Playlist.h */,
-				243CB9D3207B02FC00227B13 /* Playlist.m */,
+				2448CF84207D9DD300180817 /* Library.h */,
+				2448CF85207D9DD300180817 /* Library.m */,
+				2448CF7E207D94D000180817 /* Track.h */,
+				2448CF7F207D94D000180817 /* Track.m */,
+				2448CF81207D983400180817 /* Store.h */,
+				2448CF82207D983400180817 /* Store.m */,
+				2448CF7B207D92D700180817 /* App.h */,
+				2448CF7C207D92D700180817 /* App.m */,
 				243CB9C9207AE64600227B13 /* Kyoku.h */,
 				243CB9CA207AE64600227B13 /* Kyoku.m */,
 			);
@@ -105,7 +115,7 @@
 		243CB9B6207AE5D700227B13 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = danieltiger;
 				TargetAttributes = {
 					243CB9BD207AE5D700227B13 = {
@@ -136,10 +146,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2448CF7D207D92D700180817 /* App.m in Sources */,
+				2448CF86207D9DD300180817 /* Library.m in Sources */,
 				243CB9C2207AE5D700227B13 /* main.m in Sources */,
-				243CB9D1207AF7AA00227B13 /* TrackList.m in Sources */,
+				2448CF83207D983400180817 /* Store.m in Sources */,
+				2448CF80207D94D000180817 /* Track.m in Sources */,
 				243CB9CB207AE64600227B13 /* Kyoku.m in Sources */,
-				243CB9D4207B02FC00227B13 /* Playlist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +172,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -167,6 +180,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -215,6 +229,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -222,6 +237,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
