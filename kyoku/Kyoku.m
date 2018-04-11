@@ -93,6 +93,7 @@ NSString *AppPlaylistName = @"Kyoku";
     printf("   pause         Pause playback\n");
     printf("   list-queue    Show the current playlist, marking the current track\n");
     printf("   info          Show track information\n");
+    printf("   scan          Scan the files in iTunes and store locally for searching\n");
 }
 
 - (void)printToConsole:(NSString *)message {
