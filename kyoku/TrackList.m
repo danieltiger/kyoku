@@ -35,13 +35,13 @@
     NSInteger albumLength = 0;
     for (iTunesTrack *track in self.filteredTracks) {
         if (track.name.length > songLength) {
-            songLength = track.name.length + 1;
+            songLength = track.name.length;
         }
         if (track.artist.length > artistLength) {
-            artistLength = track.artist.length + 1;
+            artistLength = track.artist.length;
         }
         if (track.album.length > albumLength) {
-            albumLength = track.album.length + 1;
+            albumLength = track.album.length;
         }
     }
 
@@ -66,11 +66,11 @@
 
     [header addObject:@"| "];
     [header addObject:[@"name" stringByPaddingToLength:songLength withString:@" " startingAtIndex:0]];
-    [header addObject:@"| "];
+    [header addObject:@" | "];
     [header addObject:[@"artist" stringByPaddingToLength:artistLength withString:@" " startingAtIndex:0]];
-    [header addObject:@"| "];
+    [header addObject:@" | "];
     [header addObject:[@"album" stringByPaddingToLength:albumLength withString:@" " startingAtIndex:0]];
-    [header addObject:@"|"];
+    [header addObject:@" |"];
 
     return [header componentsJoinedByString:@""];
 }
@@ -80,11 +80,11 @@
 
     [divider addObject:@"| "];
     [divider addObject:[@"" stringByPaddingToLength:songLength withString:@"-" startingAtIndex:0]];
-    [divider addObject:@"| "];
+    [divider addObject:@" | "];
     [divider addObject:[@"" stringByPaddingToLength:artistLength withString:@"-" startingAtIndex:0]];
-    [divider addObject:@"| "];
+    [divider addObject:@" | "];
     [divider addObject:[@"" stringByPaddingToLength:albumLength withString:@"-" startingAtIndex:0]];
-    [divider addObject:@"|"];
+    [divider addObject:@" |"];
 
     return [divider componentsJoinedByString:@""];
 }
@@ -94,11 +94,11 @@
 
     [entry addObject:@"| "];
     [entry addObject:[track.name stringByPaddingToLength:songLength withString:@" " startingAtIndex:0]];
-    [entry addObject:@"| "];
+    [entry addObject:@" | "];
     [entry addObject:[track.artist stringByPaddingToLength:artistLength withString:@" " startingAtIndex:0]];
-    [entry addObject:@"| "];
+    [entry addObject:@" | "];
     [entry addObject:[track.album stringByPaddingToLength:albumLength withString:@" " startingAtIndex:0]];
-    [entry addObject:@"|"];
+    [entry addObject:@" |"];
 
     return [entry componentsJoinedByString:@""];
 }
